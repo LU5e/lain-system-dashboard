@@ -44,8 +44,10 @@ LAIN-SYSTEM-DASHBOARD
 ├── index.html
 ├── LivelyInfo.json
 ├── LivelyProperties.json
-├── preview.png
-├── thumbnail.png
+├── 0n0vphi1.1lg.png
+├── u1ez0cri.bgs.gif
+├── .gitignore
+├── LICENSE
 └── README.md
 ```
 
