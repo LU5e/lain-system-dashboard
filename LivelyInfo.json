@@ -1,0 +1,17 @@
+{
+  "AppVersion": "1.7.1.0",
+  "Title": "Lain System Dashboard",
+  "Thumbnail": "0n0vphi1.1lg.jpg",
+  "Preview": "u1ez0cri.bgs.gif",
+  "Desc": "Retro CRT cyberpunk dashboard inspired by 90s terminal systems.",
+  "Author": "Patrick Piña (LU5e)",
+  "License": "MIT",
+  "Contact": "https://github.com/LU5e/lain-system-dashboard",
+  "Type": 1,
+  "FileName": "index.html",
+  "Arguments": "--pause-event true --system-nowplaying",
+  "IsAbsolutePath": false,
+  "Id": null,
+  "Tags": null,
+  "Version": 1
+}

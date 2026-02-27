@@ -1,0 +1,415 @@
+/*
+===============================================================================
+Lain System Dashboard - Main Stylesheet
+-------------------------------------------------------------------------------
+Defines layout, theming system, panel styling, and CRT visual effects.
+
+Structure:
+• Global font & reset
+• CSS variable-based theme system
+• Grid layout
+• Modular panel styling
+• CRT simulation effects
+
+Designed for Lively Wallpaper environment.
+===============================================================================
+*/
+
+
+/* ============================================================================
+   GLOBAL FONT
+   ----------------------------------------------------------------------------
+   Retro monospace aesthetic inspired by terminal systems.
+============================================================================ */
+
+@import url('https://fonts.googleapis.com/css2?family=Share+Tech+Mono&display=swap');
+
+
+/* ============================================================================
+   ROOT VARIABLES (THEME SYSTEM)
+   ----------------------------------------------------------------------------
+   Centralized color configuration.
+   Values can be dynamically overridden via Lively properties.
+============================================================================ */
+
+:root {
+    /* Core palette */
+    --accent: #5da9ff;
+    --bg: #03060c;
+    --panel: #0d1b2d;
+    --border: #1c3a5f;
+
+    /* Per-panel text colors */
+    --imageText: #8cc8ff;
+    --playerText: #8cc8ff;
+    --clockText: #8cc8ff;
+    --terminalText: #8cc8ff;
+    --encodeText: #8cc8ff;
+    --countdownText: #8cc8ff;
+    --wclockText: #8cc8ff;
+    --image2Text: #8cc8ff;
+}
+
+
+/* ============================================================================
+   GLOBAL RESET
+   ----------------------------------------------------------------------------
+   Ensures consistent box sizing and removes default margins.
+============================================================================ */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Share Tech Mono', monospace;
+}
+
+body {
+    background: var(--bg);
+    color: var(--accent);
+    overflow: hidden; /* Prevent wallpaper scroll */
+}
+
+
+/* ============================================================================
+   MAIN GRID LAYOUT
+   ----------------------------------------------------------------------------
+   Responsive dashboard layout using CSS Grid.
+============================================================================ */
+
+.dashboard {
+    display: grid;
+    grid-template-columns: 2fr 1.3fr 1fr;
+    grid-template-rows: 1.3fr 1fr 1fr;
+    gap: 6px;
+    height: 100vh;
+    padding: 6px;
+    padding-bottom: 2.3%;
+}
+
+
+/* ============================================================================
+   GENERIC PANEL STRUCTURE
+   ----------------------------------------------------------------------------
+   Shared window styling across all modules.
+============================================================================ */
+
+.window {
+    background: var(--panel);
+    border: 1px solid var(--border);
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+}
+
+.titlebar {
+    background: var(--panel);
+    padding: 4px 8px;
+    font-size: 12px;
+    border-bottom: 1px solid var(--border);
+}
+
+.content {
+    flex: 1;
+    padding: 6px;
+    overflow: hidden;
+}
+
+
+/* ============================================================================
+   IMAGE PANELS
+============================================================================ */
+
+.image img,
+.panel-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+
+/* ============================================================================
+   MEDIA PLAYER PANEL
+============================================================================ */
+
+.album-art {
+    width: 120px;
+    height: 120px;
+    object-fit: cover;
+    border: 1px solid var(--accent);
+    box-shadow: 0 0 10px var(--accent);
+    opacity: 0;
+    transition: opacity 0.5s ease-in-out;
+    display: block;
+    background-color: rgba(0, 0, 0, 0.3);
+}
+
+.track-info {
+    font-size: 13px;
+    width: 100%;
+    padding: 0 10px;
+}
+
+#trackTitle {
+    font-weight: bold;
+    text-transform: uppercase;
+    text-shadow: 1px 1px var(--bg), -1px -1px var(--accent);
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+#trackArtist {
+    opacity: 0.8;
+    font-size: 11px;
+}
+
+.mp3-controls {
+    display: flex;
+    gap: 20px;
+    font-size: 20px;
+    opacity: 0.8;
+}
+
+.player-box {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    text-align: center;
+    position: relative;
+    transition: opacity 0.5s ease;
+}
+
+/* Subtle CRT RGB bleed effect overlay */
+.player-box::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    pointer-events: none;
+    background:
+        linear-gradient(rgba(18,16,16,0) 50%, rgba(0,0,0,0.1) 50%),
+        linear-gradient(90deg,
+            rgba(255,0,0,0.03),
+            rgba(0,255,0,0.01),
+            rgba(0,0,255,0.03));
+    background-size: 100% 2px, 3px 100%;
+}
+
+
+/* ============================================================================
+   CLOCK PANEL
+============================================================================ */
+
+.big-clock {
+    font-size: 38px;
+    letter-spacing: 2px;
+}
+
+.date {
+    font-size: 14px;
+}
+
+
+/* ============================================================================
+   MINI CALENDAR
+============================================================================ */
+
+#mini-calendar {
+    font-size: 11px;
+    margin-top: 8px;
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+    gap: 2px;
+    text-align: center;
+}
+
+#mini-calendar div {
+    padding: 2px;
+}
+
+.today {
+    background: var(--accent);
+    color: #000;
+}
+
+
+/* ============================================================================
+   TERMINAL PANEL
+============================================================================ */
+
+.terminal {
+    font-size: 12px;
+    white-space: pre-wrap;
+    line-height: 1.3;
+}
+
+
+/* ============================================================================
+   DATA STREAM PANEL
+============================================================================ */
+
+.numbers {
+    font-size: 11px;
+    line-height: 1.4;
+}
+
+
+/* ============================================================================
+   COUNTDOWN PANEL
+============================================================================ */
+
+.countdown {
+    font-size: 20px;
+}
+
+
+/* ============================================================================
+   WORLD CLOCK PANEL
+============================================================================ */
+
+#panelWClock .content {
+    display: flex;
+}
+
+.worldclock-wrapper {
+    display: flex;
+    gap: 30px;
+    width: 100%;
+}
+
+#earthContainer {
+    width: 140px;
+    height: 140px;
+    flex: 0 0 auto;
+}
+
+#earthContainer canvas {
+    width: 100%;
+    height: 100%;
+}
+
+.worldclock {
+    flex: 1;
+    font-size: 24px;
+}
+
+
+/* ============================================================================
+   CRT VISUAL EFFECTS
+   ----------------------------------------------------------------------------
+   Adds scanlines and subtle flicker to simulate analog monitor behavior.
+============================================================================ */
+
+/* Scanlines */
+body::after {
+    content: "";
+    position: fixed;
+    inset: 0;
+    pointer-events: none;
+    background: repeating-linear-gradient(
+        to bottom,
+        rgba(255,255,255,0.03),
+        rgba(255,255,255,0.03) 1px,
+        transparent 1px,
+        transparent 3px
+    );
+}
+
+/* Flicker overlay */
+body::before {
+    content: "";
+    position: fixed;
+    inset: 0;
+    pointer-events: none;
+    background: repeating-linear-gradient(
+        to bottom,
+        rgba(255,255,255,0.04),
+        rgba(255,255,255,0.04) 1px,
+        transparent 1px,
+        transparent 3px
+    );
+    animation: flicker 0.15s infinite;
+    mix-blend-mode: overlay;
+}
+
+@keyframes flicker {
+    0%   { opacity: 0.92; }
+    50%  { opacity: 1; }
+    100% { opacity: 0.88; }
+}
+
+
+/* ============================================================================
+   PANEL-SPECIFIC TEXT COLOR BINDINGS
+   ----------------------------------------------------------------------------
+   Allows independent color customization per module via CSS variables.
+============================================================================ */
+
+#panelImage { color: var(--imageText); }
+#panelPlayer { color: var(--playerText); }
+#panelClock { color: var(--clockText); }
+#panelTerminal { color: var(--terminalText); }
+#panelEncode { color: var(--encodeText); }
+#panelCountdown { color: var(--countdownText); }
+#panelWClock { color: var(--wclockText); }
+#panelImage2 { color: var(--image2Text); }
+
+/* ============================================================================
+   RESPONSIVE DESIGN & LIVELY THUMBNAILS
+   ----------------------------------------------------------------------------
+   Aggressively scale the fixed elements to maintain the grid structure
+   intact even in Lively's tiny thumbnails.
+============================================================================ */
+
+/* Medium screens / Small windows */
+@media (max-width: 1024px) {
+    .dashboard { gap: 4px; padding: 4px; }
+    .album-art { width: 80px; height: 80px; }
+    .track-info { font-size: 11px; }
+    .big-clock { font-size: 26px; }
+    .countdown { font-size: 16px; }
+    .worldclock { font-size: 18px; }
+    #earthContainer { width: 100px; height: 100px; }
+}
+
+/* Lively Miniature Size */
+@media (max-width: 500px) {
+    .dashboard { 
+        gap: 2px; 
+        padding: 2px; 
+        padding-bottom: 2%;
+    }
+    
+    .window { border-width: 0.5px; }
+    
+    .titlebar { 
+        padding: 1px 3px; 
+        font-size: 6px; 
+        border-width: 0.5px;
+    }
+    
+    .content { padding: 2px; }
+
+    /* Extreme reduction of text and icons */
+    .album-art { width: 35px; height: 35px; border-width: 0.5px; }
+    .track-info { font-size: 5px; padding: 0 2px; }
+    #trackTitle { text-shadow: none; }
+    #trackArtist { font-size: 4px; }
+    .mp3-controls { gap: 6px; font-size: 8px; }
+    
+    .big-clock { font-size: 10px; letter-spacing: 0; }
+    .date { font-size: 5px; }
+    
+    #mini-calendar { font-size: 3px; gap: 1px; margin-top: 2px; }
+    #mini-calendar div { padding: 1px; }
+    
+    .terminal { font-size: 4px; line-height: 1.1; }
+    .numbers { font-size: 4px; line-height: 1.1; }
+    .countdown { font-size: 8px; }
+    
+    .worldclock-wrapper { gap: 5px; }
+    .worldclock { font-size: 8px; }
+    #earthContainer { width: 40px; height: 40px; }
+}

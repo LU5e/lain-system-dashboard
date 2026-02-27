@@ -1,0 +1,61 @@
+{
+  "accentColor": {
+    "type": "color",
+    "text": "Color Principal",
+    "value": "#5da9ff"
+  },
+  "backgroundColor": {
+    "type": "color",
+    "text": "Color Fondo",
+    "value": "#03060c"
+  },
+  "panelColor": {
+    "type": "color",
+    "text": "Color Panel",
+    "value": "#0d1b2d"
+  },
+  "leftImage": {
+    "type": "folderDropdown",
+    "text": "Imagen Izquierda (Eyes)",
+    "folder": "assets/images",
+    "filter": "*.jpg|*.png|*.gif",
+    "value": "lain.jpg"
+  },
+  "rightImage": {
+    "type": "folderDropdown",
+    "text": "Imagen Derecha (Gift)",
+    "folder": "assets/images",
+    "filter": "*.jpg|*.png|*.gif",
+    "value": "lain-gift.gif"
+  },
+  "playerTextColor": {
+    "type": "color",
+    "text": "Player - Color Texto",
+    "value": "#8cc8ff"
+  },
+  "clockTextColor": {
+    "type": "color",
+    "text": "Clock - Color Texto",
+    "value": "#8cc8ff"
+  },
+  "terminalTextColor": {
+    "type": "color",
+    "text": "Terminal - Color Texto",
+    "value": "#8cc8ff"
+  },
+  "numbersTextColor": {
+    "type": "color",
+    "text": "Numbers - Color Texto",
+    "value": "#8cc8ff"
+  },
+  "countdownTextColor": {
+    "type": "color",
+    "text": "Countdown - Color Texto",
+    "value": "#8cc8ff"
+  },
+  "worldTextColor": {
+    "type": "color",
+    "text": "World Clock - Color Texto",
+    "value": "#8cc8ff"
+  }
+}

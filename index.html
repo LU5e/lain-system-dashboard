@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <!--
+    ============================================================================
+    Lain System Dashboard
+    ----------------------------------------------------------------------------
+    A retro-inspired CRT cyberpunk dashboard designed for Lively Wallpaper.
+    This layout simulates a modular system interface with multiple dynamic panels.
+    
+    ============================================================================
+    -->
+
+    <meta charset="UTF-8">
+    <title>Lain System Dashboard</title>
+
+    <!-- Main stylesheet -->
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+
+<body>
+
+    <!--
+    Main Dashboard Container
+    Grid-based layout that organizes all interface panels.
+    Each panel is modular and can be individually styled or extended.
+    -->
+    <div class="dashboard">
+
+        <!-- ========================================================= -->
+        <!-- 1. Primary Image Panel (Main Visual Focus)                -->
+        <!-- ========================================================= -->
+        <div class="window image" id="panelImage" style="grid-row:1 / span 2;">
+            <div class="titlebar">MEMORY</div>
+            <div class="content">
+                <img 
+                    id="imgLeft" 
+                    class="panel-image" 
+                    src="assets/images/lain.jpg"
+                    alt="Primary visual panel"
+                >
+            </div>
+        </div>
+
+        <!-- ========================================================= -->
+        <!-- 2. Media Player Panel                                     -->
+        <!-- Displays currently playing track information              -->
+        <!-- ========================================================= -->
+        <div class="window" id="panelPlayer">
+            <div class="titlebar">AUDIO STREAM</div>
+            <div class="content player-box">
+
+                <!-- Album artwork (fallback is 1x1 transparent pixel) -->
+                <img 
+                    id="albumArt" 
+                    class="album-art"
+                    src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7"
+                    alt="Album artwork"
+                >
+
+                <!-- Track metadata -->
+                <div class="track-info">
+                    <div id="trackTitle">NO MEDIA DETECTED</div>
+                    <div id="trackArtist">---</div>
+                </div>
+
+                <!-- Decorative media control icons -->
+                <!-- (Visual only unless linked via Lively API) -->
+                <div class="mp3-controls">
+                    <span>⏮</span>
+                    <span>⏯</span>
+                    <span>⏭</span>
+                </div>
+
+            </div>
+        </div>
+
+        <!-- ========================================================= -->
+        <!-- 3. System Clock Panel                                     -->
+        <!-- Displays local time, date, and mini calendar              -->
+        <!-- ========================================================= -->
+        <div class="window" id="panelClock">
+            <div class="titlebar">LOCAL INSTANCE</div>
+            <div class="content">
+                <div class="big-clock" id="clock"></div>
+                <div class="date" id="date"></div>
+            </div>
+            <div id="mini-calendar"></div>
+        </div>
+
+        <!-- ========================================================= -->
+        <!-- 4. Local Terminal Simulation Panel                        -->
+        <!-- Simulated terminal output for aesthetic/system effect     -->
+        <!-- ========================================================= -->
+        <div class="window" id="panelTerminal">
+            <div class="titlebar">SYSTEM LOG</div>
+            <div class="content terminal" id="terminal"></div>
+        </div>
+
+        <!-- ========================================================= -->
+        <!-- 5. Encode / Data Stream Panel                             -->
+        <!-- Decorative numeric or encoded animation output            -->
+        <!-- ========================================================= -->
+        <div class="window" id="panelEncode">
+            <div class="titlebar">PROTOCOL 7</div>
+            <div class="content numbers" id="numbers"></div>
+        </div>
+
+        <!-- ========================================================= -->
+        <!-- 6. Countdown Panel                                        -->
+        <!-- Displays dynamic countdown (configurable via JS)          -->
+        <!-- ========================================================= -->
+        <div class="window" id="panelCountdown">
+            <div class="titlebar">PHASE SHIFT</div>
+            <div class="content countdown" id="countdown"></div>
+        </div>
+
+        <!-- ========================================================= -->
+        <!-- 7. World Clock + 3D Earth Panel                           -->
+        <!-- Includes animated Three.js wireframe globe                -->
+        <!-- ========================================================= -->
+        <div class="window image" id="panelWClock">
+            <div class="titlebar">WIRED MAP</div>
+            <div class="content">
+                <div class="worldclock-wrapper">
+                    <div class="worldclock" id="worldclock"></div>
+                    <div id="earthContainer"></div>
+                </div>
+            </div>
+        </div>
+
+        <!-- ========================================================= -->
+        <!-- 8. Secondary Image Panel                                  -->
+        <!-- Decorative animated visual                                -->
+        <!-- ========================================================= -->
+        <div class="window image" id="panelImage2">
+            <div class="titlebar">FRAGMENT</div>
+            <div class="content">
+                <img 
+                    id="imgRight" 
+                    class="panel-image" 
+                    src="assets/images/lain-gift.gif"
+                    alt="Secondary visual panel"
+                >
+            </div>
+        </div>
+
+    </div>
+
+    <!-- External Libraries -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+
+    <!-- Project Scripts -->
+    <script src="js/earth.js"></script>
+    <script src="js/app.js"></script>
+    <script src="js/lively.js"></script>
+
+</body>
+
+</html>
