@@ -264,10 +264,38 @@ body {
    COUNTDOWN PANEL
 ============================================================================ */
 
-.countdown {
-    font-size: 20px;
+.event-line {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 6px;
+    padding: 4px 6px;
+    border-bottom: 1px solid rgba(255,255,255,0.1);
+    font-size: 13px;
+    letter-spacing: 1px;
 }
 
+.event-name {
+    color: var(--countdownText);
+    font-weight: bold;
+    text-transform: uppercase;
+    max-width: 60%;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+.event-time {
+    font-family: monospace;
+    color: var(--countdownNumber);
+    min-width: 140px;
+    text-align: right;
+}
+
+.event-line.completed .event-time {
+    color: var(--completeEvent);
+    opacity: 0.7;
+}
 
 /* ============================================================================
    WORLD CLOCK PANEL

@@ -156,25 +156,66 @@ generateCalendar();
    Displays remaining time until a fixed target date.
 ============================================================================ */
 
-const targetDate = new Date("2026-03-19T00:00:00");
+let events = [
+    { name: "PROJECT X", date: "2030-03-01 16:00" },
+    { name: "RETURN", date: "2028-07-22 00:00" },
+    { name: "BIRTHDAY", date: "2026-01-22 00:00" }
+];
+
+function getNextEvent() {
+
+    const now = new Date();
+
+    let futureEvents = events
+        .map(e => ({
+            name: e.name,
+            date: new Date(e.date.replace(" ", "T"))
+        }))
+        .filter(e => e.date > now)
+        .sort((a, b) => a.date - b.date);
+
+    return futureEvents.length > 0 ? futureEvents[0] : null;
+}
 
 function updateCountdown() {
+
     if (!countdownEl) return;
 
-    const diff = targetDate - new Date();
+    const now = new Date();
 
-    if (diff <= 0) {
-        countdownEl.innerHTML = "EVENT STARTED";
-        return;
-    }
+    let output = "";
 
-    const days = Math.floor(diff / 86400000);
-    const hours = Math.floor(diff / 3600000) % 24;
-    const minutes = Math.floor(diff / 60000) % 60;
-    const seconds = Math.floor(diff / 1000) % 60;
+    events.forEach(event => {
 
-    countdownEl.innerHTML =
-        `EVENT<br>${days}d ${hours}h ${minutes}m ${seconds}s`;
+        const eventDate = new Date(event.date.replace(" ", "T"));
+        const diff = eventDate - now;
+
+        if (diff <= 0) {
+            output += `
+            <div class="event-line completed">
+                <div class="event-name">${event.name}</div>
+                <div class="event-time">COMPLETED</div>
+            </div>
+            `;
+            return;
+        }
+
+        const days = Math.floor(diff / 86400000);
+        const hours = Math.floor(diff / 3600000) % 24;
+        const minutes = Math.floor(diff / 60000) % 60;
+        const seconds = Math.floor(diff / 1000) % 60;
+
+        output += `
+        <div class="event-line">
+            <div class="event-name">${event.name}</div>
+            <div class="event-time">
+                ${days}d ${hours}h ${minutes}m ${seconds}s
+            </div>
+        </div>
+        `;
+    });
+
+    countdownEl.innerHTML = output;
 }
 
 setInterval(updateCountdown, 1000);
