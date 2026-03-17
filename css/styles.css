@@ -36,6 +36,7 @@ Designed for Lively Wallpaper environment.
     /* Core palette */
     --accent: #5da9ff;
     --bg: #03060c;
+    --titleBar: #0d1b2d;
     --panel: #0d1b2d;
     --border: #1c3a5f;
 
@@ -46,7 +47,10 @@ Designed for Lively Wallpaper environment.
     --terminalText: #8cc8ff;
     --encodeText: #8cc8ff;
     --countdownText: #8cc8ff;
+    --countdownNumber: #e3ecf5;
+    --completeEvent: #ff4d4d;
     --wclockText: #8cc8ff;
+    --globeColor: #8cc8ff;
     --image2Text: #8cc8ff;
 }
 
