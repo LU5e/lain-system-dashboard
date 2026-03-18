@@ -9,6 +9,11 @@
     "text": "Color Fondo",
     "value": "#03060c"
   },
+  "titleBarColor": {
+    "type": "color",
+    "text": "TitleBar Color",
+    "value": "#0d1b2d"
+  },
   "panelColor": {
     "type": "color",
     "text": "Color Panel",
@@ -27,6 +32,36 @@
     "folder": "assets/images",
     "filter": "*.jpg|*.png|*.gif",
     "value": "lain-gift.gif"
+  },
+  "event1Name": {
+    "type": "textbox",
+    "text": "Event 1 name",
+    "value": "PROJECT X"
+  },
+  "event1Date": {
+    "type": "textbox",
+    "text": "Date 1 (YYYY-MM-DD HH:MM)",
+    "value": "2030-03-01 16:00"
+  },
+  "event2Name": {
+    "type": "textbox",
+    "text": "Event 2 Name",
+    "value": "RETURN"
+  },
+  "event2Date": {
+    "type": "textbox",
+    "text": "Date 2 (YYYY-MM-DD HH:MM)",
+    "value": "2028-07-22 00:00"
+  },
+  "event3Name": {
+    "type": "textbox",
+    "text": "Event 3 Name",
+    "value": "BIRTHDAY"
+  },
+  "event3Date": {
+    "type": "textbox",
+    "text": "Date 3 (YYYY-MM-DD HH:MM)",
+    "value": "2026-01-22 00:00"
   },
   "playerTextColor": {
     "type": "color",
@@ -53,9 +88,24 @@
     "text": "Countdown - Color Texto",
     "value": "#8cc8ff"
   },
+  "countdownNumberColor": {
+    "type": "color",
+    "text": "Countdown - Color number",
+    "value": "#e3ecf5"
+  },
+    "completeEventColor": {
+    "type": "color",
+    "text": "Countdown - Color Complete Event",
+    "value": "#ff4d4d"
+  },
   "worldTextColor": {
     "type": "color",
     "text": "World Clock - Color Texto",
+    "value": "#8cc8ff"
+  },
+  "globeColor": {
+    "type": "color",
+    "text": "World Clock - Color Globe",
     "value": "#8cc8ff"
   }
 }

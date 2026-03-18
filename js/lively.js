@@ -5,7 +5,7 @@ Lively Integration Module
 Handles communication between Lain System Dashboard and Lively Wallpaper.
 
 Responsibilities:
-• Dynamic property updates (images, colors, theme variables)
+• Dynamic property updates (images, colors, theme variables, countdown dates)
 • Media playback state detection
 • Current track metadata rendering
 
@@ -74,6 +74,11 @@ function livelyPropertyListener(name, val) {
                 .style.setProperty("--panel", val);
             break;
 
+        case "titleBarColor":
+            document.documentElement
+                .style.setProperty("--titleBar", val);
+            break;
+
         case "playerTextColor":
             document.documentElement
                 .style.setProperty("--playerText", val);
@@ -99,10 +104,49 @@ function livelyPropertyListener(name, val) {
                 .style.setProperty("--countdownText", val);
             break;
 
+        case "countdownNumberColor":
+            document.documentElement
+                .style.setProperty("--countdownNumber", val);
+            break;
+
+        case "completeEventColor":
+            document.documentElement
+                .style.setProperty("--completeEvent", val);
+            break;
+
         case "worldTextColor":
             document.documentElement
                 .style.setProperty("--wclockText", val);
             break;
+
+        case "globeColor":
+            document.documentElement
+                .style.setProperty("--globeColor", val);
+            break;
+        
+        case "event1Name":
+      events[0].name = val;
+      break;
+
+    case "event1Date":
+      events[0].date = val;
+      break;
+
+    case "event2Name":
+      events[1].name = val;
+      break;
+
+    case "event2Date":
+      events[1].date = val;
+      break;
+
+    case "event3Name":
+      events[2].name = val;
+      break;
+
+    case "event3Date":
+      events[2].date = val;
+      break;
     }
 }
 
