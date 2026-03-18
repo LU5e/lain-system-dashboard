@@ -1,12 +1,12 @@
 {
   "accentColor": {
     "type": "color",
-    "text": "Color Principal",
+    "text": "Main Color",
     "value": "#5da9ff"
   },
   "backgroundColor": {
     "type": "color",
-    "text": "Color Fondo",
+    "text": "Background Color",
     "value": "#03060c"
   },
   "titleBarColor": {
@@ -16,19 +16,19 @@
   },
   "panelColor": {
     "type": "color",
-    "text": "Color Panel",
+    "text": "Panel Color",
     "value": "#0d1b2d"
   },
   "leftImage": {
     "type": "folderDropdown",
-    "text": "Imagen Izquierda (Eyes)",
+    "text": "Left Image",
     "folder": "assets/images",
     "filter": "*.jpg|*.png|*.gif",
     "value": "lain.jpg"
   },
   "rightImage": {
     "type": "folderDropdown",
-    "text": "Imagen Derecha (Gift)",
+    "text": "Right Image (Gift)",
     "folder": "assets/images",
     "filter": "*.jpg|*.png|*.gif",
     "value": "lain-gift.gif"
@@ -65,47 +65,47 @@
   },
   "playerTextColor": {
     "type": "color",
-    "text": "Player - Color Texto",
+    "text": "Stream Player - Text Color",
     "value": "#8cc8ff"
   },
   "clockTextColor": {
     "type": "color",
-    "text": "Clock - Color Texto",
+    "text": "Local Instance - Text Color",
     "value": "#8cc8ff"
   },
   "terminalTextColor": {
     "type": "color",
-    "text": "Terminal - Color Texto",
+    "text": "Log - Text Color",
     "value": "#8cc8ff"
   },
   "numbersTextColor": {
     "type": "color",
-    "text": "Numbers - Color Texto",
+    "text": "Protocol 7 - Text Color",
     "value": "#8cc8ff"
   },
   "countdownTextColor": {
     "type": "color",
-    "text": "Countdown - Color Texto",
+    "text": "Countdown - Text Color",
     "value": "#8cc8ff"
   },
   "countdownNumberColor": {
     "type": "color",
-    "text": "Countdown - Color number",
+    "text": "Countdown - Number Color",
     "value": "#e3ecf5"
   },
     "completeEventColor": {
     "type": "color",
-    "text": "Countdown - Color Complete Event",
+    "text": "Countdown - Complete Event Color",
     "value": "#ff4d4d"
   },
   "worldTextColor": {
     "type": "color",
-    "text": "World Clock - Color Texto",
+    "text": "World Clock - Text Color",
     "value": "#8cc8ff"
   },
   "globeColor": {
     "type": "color",
-    "text": "World Clock - Color Globe",
+    "text": "World Clock - Globe Color",
     "value": "#8cc8ff"
   }
 }
