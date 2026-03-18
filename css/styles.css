@@ -107,7 +107,7 @@ body {
 }
 
 .titlebar {
-    background: var(--panel);
+    background: var(--titleBar);
     padding: 4px 8px;
     font-size: 12px;
     border-bottom: 1px solid var(--border);
