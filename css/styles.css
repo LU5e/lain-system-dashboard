@@ -404,6 +404,15 @@ body::before {
     .countdown { font-size: 16px; }
     .worldclock { font-size: 18px; }
     #earthContainer { width: 100px; height: 100px; }
+
+    .event-line {
+        font-size: 11px;
+        padding: 3px 4px;
+        margin-bottom: 4px;
+    }
+    .event-time {
+        min-width: 100px; 
+    }
 }
 
 /* Lively Miniature Size */
@@ -444,4 +453,22 @@ body::before {
     .worldclock-wrapper { gap: 5px; }
     .worldclock { font-size: 8px; }
     #earthContainer { width: 40px; height: 40px; }
+
+    .event-line {
+        font-size: 4px;
+        padding: 1px 2px;
+        margin-bottom: 2px;
+        border-bottom-width: 0.5px;
+        letter-spacing: 0;
+    }
+    
+    .event-name {
+        max-width: 50%;
+    }
+
+    .event-time {
+        min-width: 0; 
+        width: 45%; 
+        font-size: 4px;
+    }
 }
